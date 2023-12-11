@@ -1,0 +1,99 @@
+1  -> get_page_credentials()
+
+        page_name = "raisebe"
+        ---------------------------------------
+        page_id, access_token = get_page_credentials(page_name)
+
+2  -> post_text_status()  Text
+
+        status_message = "Hello, this is my text post!"
+        -----------------------------------------
+        post_text_status(page_name, status_message)
+
+3  -> post_photo()   Photo
+
+        photo_path = "path/to/your/photo.jpg"
+        caption = "Check out this awesome photo!"
+        -----------------------------------------
+        post_photo(page_name, photo_path, caption)
+
+4  -> post_link()   Link
+
+        link_url = "https://example.com"
+        link_caption = "Check out this cool website!"
+        link_description = "Explore amazing content and more."
+        ------------------------------------------
+        post_link(page_name, link_url, link_caption, link_description)
+
+5  -> post_video()  Video
+
+        video_path = "path/to/your/video.mp4"
+        video_title = "Awesome Video"
+        video_description = "Check out this amazing video!"
+        ------------------------------------------
+        post_video(page_name, video_path, video_title, video_description)
+
+6  -> create_event()   Event 
+
+        event_name = "Awesome Event"
+        start_time = "2023-08-01T12:00:00"
+        end_time = "2023-08-01T16:00:00"
+        event_description = "Join us for an exciting event!"
+        --------------------------------------------
+        create_event(page_name, event_name, start_time, end_time, event_description)
+
+7  -> delete_post()
+
+        post_id_to_delete = "POST_ID_TO_DELETE
+        -------------------------------------------
+        delete_post(page_name, post_id_to_delete)
+        
+8  -> get_page_info()
+
+        page_info = get_page_info(page_name)
+
+9  -> get_page_posts()
+
+        posts = get_page_posts(page_name, 5)
+
+10 -> get_page_insights()
+
+        metric = "page_impressions"
+        period = "day"
+        --------------------------------------------
+        insights = get_page_insights(page_name, metric, period)
+
+
+Detailed explanation of each function's parameters:
+
+get_page_credentials(page_name): This function retrieves the Facebook page credentials (page_id and access_token) from the credentials.json file. The page_name parameter is used to identify the specific Facebook page for which you want to retrieve the credentials.
+
+post_text_status(page_name, status_message): This function posts a text status update to the specified Facebook page. The page_name parameter is used to determine the target page, and the status_message parameter contains the text you want to post as the status update.
+
+post_photo(page_name, photo_path, caption): This function posts a photo to the specified Facebook page. The page_name parameter indicates the target page, the photo_path parameter contains the path to the photo file on your local machine, and the optional caption parameter allows you to add a caption to the photo.
+
+post_link(page_name, link_url, link_caption, link_description): This function posts a link to the specified Facebook page. The page_name parameter specifies the target page, link_url is the URL of the webpage you want to share, link_caption is the title or headline for the link, and link_description is an optional description of the link.
+
+post_video(page_name, video_path, video_title, video_description): This function posts a video to the specified Facebook page. The page_name parameter indicates the target page, video_path is the file path to the video on your local machine, video_title is the title of the video, and video_description is an optional description for the video.
+
+create_event(page_name, event_name, start_time, end_time, event_description): This function creates an event on the specified Facebook page. The page_name parameter identifies the target page, event_name is the name of the event, start_time is the start date and time of the event in ISO 8601 format, end_time is the end date and time of the event in ISO 8601 format, and event_description is an optional description of the event.
+
+delete_post(page_name, post_id): This function deletes a post with the specified post_id from the specified Facebook page. The page_name parameter indicates the target page, and post_id is the unique identifier of the post you want to delete.
+
+get_page_info(page_name): This function retrieves various details about the specified Facebook page. The page_name parameter identifies the target page, and it returns a dictionary containing information such as the page's name, category, description, profile picture URL, and cover photo URL.
+
+get_page_posts(page_name, post_count): This function fetches the latest post_count number of posts from the specified Facebook page. The page_name parameter indicates the target page, and post_count is the number of posts you want to retrieve.
+
+get_page_insights(page_name, metric, period): This function retrieves insights data for the specified Facebook page. The page_name parameter identifies the target page, metric is the type of insight you want to retrieve (e.g., "page_impressions", "page_engaged_users"),
+
+
+
+   page_name = input("Enter the page name: ")
+    photo_path = input("Enter the photo path: ")
+    caption = input("Enter the caption (optional): ")
+
+    # Get the scheduled time from the user.
+    scheduled_time = input("Enter the scheduled time (YYYY-MM-DDTHH:MM:SS): ")
+
+    # Post the photo and schedule it for the specified time.
+    post_photo_scheduled(page_name, photo_path, caption, scheduled_time)
